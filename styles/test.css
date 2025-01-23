@@ -1,0 +1,51 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    height: 200vh; /* Altura maior para testar a fixação */
+  }
+  
+  .rectangle {
+    background: white; /* Fundo branco do retângulo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Torna o retângulo fixo na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para que o centro fique exato */
+  }
+  
+  .image-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre as imagens */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 75px; /* Tamanho inicial */
+    height: auto; /* Mantém a proporção original */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+    cursor: pointer;
+    border: 2px solid white; /* Borda ao redor das imagens */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+  }
+  
+  .image-container img:hover {
+    width: 125px;
+    height: auto;
+    filter: grayscale(0%);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+  }
+  
