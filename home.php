@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="./styles/home.css">
 </head>
 <body>
     <header class="hero">
@@ -21,13 +21,13 @@
                 <li><a href="#order-form">Services</a></li>
                 <li class="social-links">
                     <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                        <img src="../images/sociais/instagram_icon.png" alt="Instagram" />
+                        <img src="./images/sociais/instagram_icon.png" alt="Instagram" />
                     </a>
                     <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                        <img src="../images/sociais/linkedin_icon.png" alt="LinkedIn" />
+                        <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn" />
                     </a>
                     <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                        <img src="../images/sociais/pinterest_icon.png" alt="Pinterest" />
+                        <img src="./images/sociais/pinterest_icon.png" alt="Pinterest" />
                     </a>
                 </li>
             </ul>
@@ -40,11 +40,11 @@
 
     <section class="partners">
         <div class="image-container">
-            <img src="../images/partners/partner1.jpeg" alt="Kreativ House">
-            <img src="../images/partners/partner2.jpg" alt="V Design">
-            <img src="../images/partners/partner3.jpg" alt="Interior">
-            <img src="../images/partners/partner4.jpg" alt="Kitchen">
-            <img src="../images/partners/partner5.jpg" alt="Heintz">
+            <img src="./images/partners/partner1.jpeg" alt="Kreativ House">
+            <img src="./images/partners/partner2.jpg" alt="V Design">
+            <img src="./images/partners/partner3.jpg" alt="Interior">
+            <img src="./images/partners/partner4.jpg" alt="Kitchen">
+            <img src="./images/partners/partner5.jpg" alt="Heintz">
         </div>
     </section>
 
