@@ -68,40 +68,22 @@
         <h2>My Projects</h2>
         <div class="projects">
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/boat.jpg" alt="Project 1">
-                    <figcaption>boat.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/boat.jpg" alt="Project 1">
             </div>
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/bee.jpg" alt="Project 2">
-                    <figcaption>bee.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/bee.jpg" alt="Project 2">
             </div>
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/ballon.jpg" alt="Project 3">
-                    <figcaption>ballon.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/ballon.jpg" alt="Project 3">
             </div>
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/chair.jpg" alt="Project 4">
-                    <figcaption>chair.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/chair.jpg" alt="Project 4">
             </div>
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/chinese.jpg" alt="Project 5">
-                    <figcaption>chinese.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/chinese.jpg" alt="Project 5">
             </div>
             <div class="project-item">
-                <figure>
-                    <img src="./images/pinterest/dog.jpg" alt="Project 6">
-                    <figcaption>dog.jpg</figcaption>
-                </figure>
+                <img src="./images/pinterest/dog.jpg" alt="Project 6">
             </div>
         </div>
         <div class="projects-gradient"></div>

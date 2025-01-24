@@ -202,55 +202,35 @@ body {
 
 /* Galeria */
 .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis, ajustando o número de colunas */
+    gap: 20px; /* Espaçamento entre as imagens */
     max-width: 1000px;
     margin: 0 auto;
-    column-count: 4; /* Número de colunas */
-    column-gap: 20px; /* Espaço entre as colunas */
 }
 
-/* Estilo dos itens */
 .project-item {
-    break-inside: avoid;
-    margin-bottom: 16px;
-}
-
-.project-item figure {
-    margin: 0;
     position: relative;
-}
-
-.project-item figcaption {
-    font-style: italic;
-    padding: 8px;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    box-sizing: border-box;
-    bottom: 3px;
-    color: #fff;
-    height: 30px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border-radius: 0 0 14px 14px;
-    text-align: center;
 }
 
 .project-item img {
     width: 100%;
+    height: auto;
+    object-fit: cover; /* Para preencher o espaço sem distorcer */
     border-radius: 14px;
 }
 
-/* Degradê */
 .projects-gradient {
     position: absolute;
-    bottom: 120px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 150px;
     background: linear-gradient(to bottom, rgba(249, 249, 249, 0), #f7f7f7);
-    pointer-events: none; /* Para o degradê não interferir no botão */
+    pointer-events: none; /* O degradê não interfere nos cliques */
 }
+
 
 /* Botão */
 .projects-button-container {
@@ -278,6 +258,12 @@ body {
 }
 
 /* Responsividade */
+@media screen and (min-width: 1024px) {
+    .image-container img {
+        display: inline-block; /* Garante que as imagens sejam exibidas */
+    }
+}
+
 @media screen and (max-width: 500px) {
     .projects {
         column-count: 3;
