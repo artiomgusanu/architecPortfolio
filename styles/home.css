@@ -53,10 +53,18 @@ body {
 }
 
 .nav-links a {
-    text-decoration: none;
+    display: inline-block;
     color: white;
-    font-size: 1.1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
+
+.nav-links a:hover {
+    color: #fff; /* Cor do texto ao passar o mouse */
+    transform: translateY(-2px); /* Movimento para cima */
+}
+
 
 /* Redes Sociais */
 .social-links {
@@ -177,6 +185,111 @@ body {
     font-size: 1.2rem;
     color: #666;
 }
+
+/* Estilo da seção */
+.projects-section {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+/* Título */
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Galeria */
+.projects {
+    max-width: 1000px;
+    margin: 0 auto;
+    column-count: 4; /* Número de colunas */
+    column-gap: 20px; /* Espaço entre as colunas */
+}
+
+/* Estilo dos itens */
+.project-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+}
+
+.project-item figure {
+    margin: 0;
+    position: relative;
+}
+
+.project-item figcaption {
+    font-style: italic;
+    padding: 8px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 3px;
+    color: #fff;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 0 0 14px 14px;
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+/* Degradê */
+.projects-gradient {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0), #f7f7f7);
+    pointer-events: none; /* Para o degradê não interferir no botão */
+}
+
+/* Botão */
+.projects-button-container {
+    margin-top: 20px;
+}
+
+.projects-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #eaf3f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.projects-button:hover {
+    background-color: #b3bec1; /* Cor mais escura ao passar o cursor */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    text-decoration: none;
+    transform: translateY(-2px); /* Leve movimento para cima */
+}
+
+/* Responsividade */
+@media screen and (max-width: 500px) {
+    .projects {
+        column-count: 3;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 700px) {
+    .projects {
+        column-count: 3;
+    }
+}
+
 
 /* Order Form Section */
 .order-form {

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="icon" type="image/png" href="./images/logo/logoRC.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header class="hero">
         <nav class="navbar">
@@ -49,17 +52,64 @@
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                Hi! I'm Rita Cardoso, a creative designer passionate about crafting unique experiences 
-                through innovative design solutions. With years of experience in interior design, branding, 
+                Hi! I'm Rita Cardoso, a creative designer passionate about crafting unique experiences
+                through innovative design solutions. With years of experience in interior design, branding,
                 and visual storytelling, I aim to blend functionality with aesthetics in every project.
             </p>
             <p>
-                Whether it's a cozy home redesign or a large-scale commercial project, I believe in the 
-                power of design to transform spaces and elevate experiences. Let’s create something 
+                Whether it's a cozy home redesign or a large-scale commercial project, I believe in the
+                power of design to transform spaces and elevate experiences. Let’s create something
                 beautiful together!
             </p>
         </div>
     </section>
+
+    <section class="projects-section" id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/boat.jpg" alt="Project 1">
+                    <figcaption>boat.jpg</figcaption>
+                </figure>
+            </div>
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/bee.jpg" alt="Project 2">
+                    <figcaption>bee.jpg</figcaption>
+                </figure>
+            </div>
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/ballon.jpg" alt="Project 3">
+                    <figcaption>ballon.jpg</figcaption>
+                </figure>
+            </div>
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/chair.jpg" alt="Project 4">
+                    <figcaption>chair.jpg</figcaption>
+                </figure>
+            </div>
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/chinese.jpg" alt="Project 5">
+                    <figcaption>chinese.jpg</figcaption>
+                </figure>
+            </div>
+            <div class="project-item">
+                <figure>
+                    <img src="./images/pinterest/dog.jpg" alt="Project 6">
+                    <figcaption>dog.jpg</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="projects-gradient"></div>
+        <div class="projects-button-container">
+            <a href="myProjects.php" class="projects-button">See All Projects</a>
+        </div>
+    </section>
+
 
     <section class="order-form" id="order-form">
         <h2>Make a Request</h2>
@@ -85,27 +135,28 @@
     </section>
 
     <footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Rita Cardoso. All Rights Reserved.</p>
-        <nav class="footer-links">
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#order-form">Services</a>
-        </nav>
-        <div class="footer-social-links">
-            <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                <img src="./images/sociais/instagram_icon.png" alt="Instagram">
-            </a>
-            <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn">
-            </a>
-            <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                <img src="./images/sociais/pinterest_icon.png" alt="Pinterest">
-            </a>
+        <div class="footer-content">
+            <p>&copy; 2025 Rita Cardoso. All Rights Reserved.</p>
+            <nav class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#order-form">Services</a>
+            </nav>
+            <div class="footer-social-links">
+                <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
+                    <img src="./images/sociais/instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
+                    <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn">
+                </a>
+                <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
+                    <img src="./images/sociais/pinterest_icon.png" alt="Pinterest">
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
 </body>
+
 </html>
