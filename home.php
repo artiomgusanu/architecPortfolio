@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
     <link rel="stylesheet" href="./styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="hero">
@@ -81,5 +82,29 @@
             <button type="submit" class="btn-submit">Submit Request</button>
         </form>
     </section>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Rita Cardoso. All Rights Reserved.</p>
+        <nav class="footer-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#order-form">Services</a>
+        </nav>
+        <div class="footer-social-links">
+            <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
+                <img src="./images/sociais/instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
+                <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
+                <img src="./images/sociais/pinterest_icon.png" alt="Pinterest">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

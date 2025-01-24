@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     line-height: 1.6;
     background-color: #f7f7f7;
     color: #333;
@@ -42,6 +42,9 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 15px;
     gap: 20px;
 }
 
@@ -232,8 +235,68 @@ body {
 
 /* Responsividade para mobile */
 @media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Centraliza os itens no navbar */
+    }
+
+    .logo {
+        text-align: center; /* Centraliza o texto do logo */
+        font-size: 1.8rem; /* Ajuste opcional para um tamanho maior */
+    }
+
     .nav-links,
     .social-links {
-        display: none; /* Esconde tudo exceto o logo */
+        display: none; /* Esconde links e ícones de redes sociais na versão móvel */
     }
+}
+
+/* Footer */
+.footer {
+    background-color: #333; /* Fundo escuro combinando com o tema geral */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-links a img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.footer-social-links a img:hover {
+    transform: scale(1.1);
+    filter: invert(70%);
 }
