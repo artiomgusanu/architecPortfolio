@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
     <link rel="stylesheet" href="./styles/home.css">
+    <link rel="icon" type="image/png" href="./images/logo/logoRC.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,8 +13,8 @@
         <nav class="navbar">
             <a href="#" class="logo">Rita Cardoso</a>
             <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#order-form">Services</a></li>
             </ul>
             <div class="social-links">
