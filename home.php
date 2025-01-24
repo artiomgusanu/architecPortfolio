@@ -10,27 +10,22 @@
     <header class="hero">
         <nav class="navbar">
             <a href="#" class="logo">Rita Cardoso</a>
-            <div class="hamburger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#order-form">Services</a></li>
-                <li class="social-links">
-                    <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                        <img src="./images/sociais/instagram_icon.png" alt="Instagram" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                        <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn" />
-                    </a>
-                    <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                        <img src="./images/sociais/pinterest_icon.png" alt="Pinterest" />
-                    </a>
-                </li>
             </ul>
+            <div class="social-links">
+                <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
+                    <img src="./images/sociais/instagram_icon.png" alt="Instagram" />
+                </a>
+                <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
+                    <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn" />
+                </a>
+                <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
+                    <img src="./images/sociais/pinterest_icon.png" alt="Pinterest" />
+                </a>
+            </div>
         </nav>
         <div class="hero-content">
             <h1>We design <br> the future</h1>
@@ -86,16 +81,5 @@
             <button type="submit" class="btn-submit">Submit Request</button>
         </form>
     </section>
-
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const socialLinks = document.querySelector('.social-links');
-    
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            socialLinks.classList.toggle('active');
-        });
-    </script>    
 </body>
 </html>
