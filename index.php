@@ -34,17 +34,21 @@
         </nav>
         <div class="hero-content">
             <h1>We design <br> the future</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <p>I turn ideas into reality. I combine innovative design with functionality to create 
+                spaces and projects that tell unique stories. Explore my portfolio and get 
+                inspired for your next project.</p>
         </div>
     </header>
 
     <section class="partners">
         <div class="image-container">
-            <img src="./images/partners/partner1.jpeg" alt="Kreativ House">
-            <img src="./images/partners/partner2.jpg" alt="V Design">
-            <img src="./images/partners/partner3.jpg" alt="Interior">
+            <img src="./images/partners/partner6.jpg" alt="Kreativ House">
+            <img src="./images/partners/partner7.jpg" alt="V Design">
+            <img src="./images/partners/partner2.jpg" alt="Interior">
             <img src="./images/partners/partner4.jpg" alt="Kitchen">
             <img src="./images/partners/partner5.jpg" alt="Heintz">
+            <img src="./images/partners/partner1.jpeg" alt="Heintz">
+            <img src="./images/partners/partner3.jpg" alt="Heintz">
         </div>
     </section>
 
