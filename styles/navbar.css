@@ -1,0 +1,58 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a img {
+    width: 27px;
+    height: 27px;
+    opacity: 0.5;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-links a img:hover {
+    transform: scale(1.1);
+    filter: opacity(1);
+}
