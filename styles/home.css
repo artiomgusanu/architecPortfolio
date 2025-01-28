@@ -14,15 +14,16 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: #71909C;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3)), 
+                      url("../images/algo1-transformed.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 50px;
+    padding: 30px 50px;
     text-align: center;
     color: white;
-    position: relative;
 }
+
 
 /* Navbar */
 .navbar {
@@ -33,10 +34,53 @@ body {
     position: relative;
 }
 
-.logo {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
+/* Logo Container */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+}
+
+.logo-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Logo Base */
+.logo-base {
+    opacity: 0.8;
+}
+
+/* Logo Top */
+.logo-top {
+    filter: invert(100%);
+}
+
+@media (max-width: 768px) {
+    .logo-container{
+        width: 200px;
+        height: 200px;
+    }
+    .logo-base {
+        filter: invert(100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container{
+        width: 200px;
+        height: 200px;
+    }
+    .logo-base {
+        filter: invert(100%);
+    }
 }
 
 /* Nav Links */
@@ -47,21 +91,22 @@ body {
     position: absolute; /* Permite centralizar no meio do navbar */
     left: 50%;
     transform: translateX(-50%); /* Centraliza horizontalmente */
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(225, 223, 223, 0.7);
     padding: 10px 30px;
     border-radius: 15px;
 }
 
 .nav-links a {
     display: inline-block;
-    color: white;
+    color: #333;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #fff; /* Cor do texto ao passar o mouse */
+    color: #333; /* Cor do texto ao passar o mouse */
     transform: translateY(-2px); /* Movimento para cima */
 }
 
@@ -73,28 +118,28 @@ body {
 }
 
 .social-links a img {
-    width: 27px;
-    height: 27px;
-    opacity: 0.5;
+    width: 28px;
+    height: 28px;
+    filter: invert(100%) opacity(0.8);
     transition: transform 0.3s, filter 0.3s;
 }
 
 .social-links a img:hover {
     transform: scale(1.1);
-    filter: opacity(1);
+    filter: invert(100%);
 }
 
 /* Hero Content */
 .hero-content h1 {
     font-size: 3rem;
-    margin-top: 125px;
+    margin-top: 75px;
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     color: #f0f0f0;
-    margin: 0 auto 150px;
+    margin: 0 auto 175px;
     max-width: 800px;
     text-align: center;
 }
@@ -140,11 +185,11 @@ body {
 /* Responsividade para Partners */
 @media (max-width: 768px) {
     .image-container img {
-        width: 60px;
+        width: 80px;
     }
 
     .image-container img:hover {
-        width: 100px;
+        width: 120px;
     }
 
     .image-container img:nth-child(n+5) {
@@ -154,11 +199,11 @@ body {
 
 @media (max-width: 480px) {
     .image-container img {
-        width: 50px;
+        width: 70px;
     }
 
     .image-container img:hover {
-        width: 80px;
+        width: 100px;
     }
 }
 

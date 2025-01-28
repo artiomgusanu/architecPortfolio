@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
-    <link rel="stylesheet" href="./styles/import.css">
+    <link rel="stylesheet" href="./styles/home.css">
     <link rel="icon" type="image/png" href="./images/logo/logoRC.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
         rel="stylesheet">
@@ -14,7 +14,12 @@
 <body>
     <header class="hero">
         <nav class="navbar">
-            <a href="#" class="logo">Rita Cardoso</a>
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="./images/logo/12.png" alt="Logo Base" class="logo-base" />
+                    <img src="./images/logo/23.png" alt="Logo Top" class="logo-top" /> 
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -22,21 +27,20 @@
             </ul>
             <div class="social-links">
                 <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                    <img src="./images/sociais/instagram_icon.png" alt="Instagram" />
+                    <img src="./images/sociais/instagram (1).png" alt="Instagram" />
                 </a>
                 <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                    <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn" />
+                    <img src="./images/sociais/linkedin.png" alt="LinkedIn" />
                 </a>
                 <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                    <img src="./images/sociais/pinterest_icon.png" alt="Pinterest" />
+                    <img src="./images/sociais/pinterest.png" alt="Pinterest" />
                 </a>
             </div>
         </nav>
         <div class="hero-content">
             <h1>We design <br> the future</h1>
             <p>I turn ideas into reality. I combine innovative design with functionality to create 
-                spaces and projects that tell unique stories. Explore my portfolio and get 
-                inspired for your next project.</p>
+                spaces and projects that tell unique stories.</p>
         </div>
     </header>
 
@@ -56,14 +60,14 @@
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                Hi! I'm Rita Cardoso, a creative designer passionate about crafting unique experiences
-                through innovative design solutions. With years of experience in interior design, branding,
-                and visual storytelling, I aim to blend functionality with aesthetics in every project.
+                Hi! I'm Rita de Sousa Cardoso, a student and aspiring architect. I've always had a deep
+                passion for drawing and painting, which has been a constant source of inspiration in my life.
             </p>
             <p>
-                Whether it's a cozy home redesign or a large-scale commercial project, I believe in the
-                power of design to transform spaces and elevate experiences. Let’s create something
-                beautiful together!
+                This platform serves as a way for me to connect with people who are interested in my 
+                creations, enabling us to collaborate and bring amazing ideas to life. I look forward to 
+                creating something great with you!
+
             </p>
         </div>
     </section>
