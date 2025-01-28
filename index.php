@@ -1,3 +1,19 @@
+<?php
+include './db/connection.php';
+
+// Query to get the project count
+$query = "SELECT COUNT(*) as project_count FROM projects";
+
+if ($result = mysqli_query($conn, $query)) {
+    $row = mysqli_fetch_assoc($result);
+    $project_count = $row['project_count'];
+} else {
+    $project_count = 0;
+    echo "Error: " . mysqli_error($conn);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +32,8 @@
         <nav class="navbar">
             <div class="logo">
                 <div class="logo-container">
-                    <img src="./images/logo/12.png" alt="Logo Base" class="logo-base" />
-                    <img src="./images/logo/23.png" alt="Logo Top" class="logo-top" /> 
+                    <img src="./images/logo/logo1.png" alt="Logo Base" class="logo-base" />
+                    <img src="./images/logo/logo2.png" alt="Logo Top" class="logo-top" />
                 </div>
             </div>
             <ul class="nav-links">
@@ -27,7 +43,7 @@
             </ul>
             <div class="social-links">
                 <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                    <img src="./images/sociais/instagram (1).png" alt="Instagram" />
+                    <img src="./images/sociais/instagram.png" alt="Instagram" />
                 </a>
                 <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
                     <img src="./images/sociais/linkedin.png" alt="LinkedIn" />
@@ -39,7 +55,7 @@
         </nav>
         <div class="hero-content">
             <h1>We design <br> the future</h1>
-            <p>I turn ideas into reality. I combine innovative design with functionality to create 
+            <p>I turn ideas into reality. I combine innovative design with functionality to create
                 spaces and projects that tell unique stories.</p>
         </div>
     </header>
@@ -64,8 +80,8 @@
                 passion for drawing and painting, which has been a constant source of inspiration in my life.
             </p>
             <p>
-                This platform serves as a way for me to connect with people who are interested in my 
-                creations, enabling us to collaborate and bring amazing ideas to life. I look forward to 
+                This platform serves as a way for me to connect with people who are interested in my
+                creations, enabling us to collaborate and bring amazing ideas to life. I look forward to
                 creating something great with you!
 
             </p>
@@ -73,7 +89,7 @@
     </section>
 
     <section class="projects-section" id="projects">
-        <h2>My Projects</h2>
+        <h2>My Projects (<?php echo $project_count; ?> Completed)</h2>
         <div class="projects">
             <div class="project-item">
                 <img src="./images/pinterest/boat.jpg" alt="Project 1">
@@ -134,15 +150,15 @@
             </nav>
             <div class="footer-social-links">
                 <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                    <img src="./images/sociais/instagram_icon.png" alt="Instagram">
+                    <img src="./images/sociais/instagram.png" alt="Instagram">
                 </a>
                 <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                    <img src="./images/sociais/linkedin_icon.png" alt="LinkedIn">
+                    <img src="./images/sociais/linkedin.png" alt="LinkedIn">
                 </a>
                 <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                    <img src="./images/sociais/pinterest_icon.png" alt="Pinterest">
+                    <img src="./images/sociais/pinterest.png" alt="Pinterest">
                 </a>
-            </div>
+            </div> 
         </div>
     </footer>
 

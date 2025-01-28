@@ -9,6 +9,20 @@ require './vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Database connection
+$host = 'localhost';
+$dbUsername = 'root';
+$dbPassword = 'root123';
+$dbName = 'rita';
+
+// Create connection
+$conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -74,10 +88,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo "Falha ao enviar o pedido.";
         }
+
+        // Save request to the database
+        $images = implode(',', $uploadedFiles); // Convert array to comma-separated string
+        $stmt = $conn->prepare("INSERT INTO requests (name, email, message, images) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $name, $email, $message, $images);
+        $stmt->execute();
+        $stmt->close();
+
     } catch (Exception $e) {
         echo "Erro ao enviar o pedido: {$mail->ErrorInfo}";
     }
 } else {
     echo "Método de requisição inválido.";
 }
+
+// Close the database connection
+$conn->close();
 ?>
