@@ -25,32 +25,6 @@ if ($result = mysqli_query($conn, $query)) {
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Botão de rolagem para o topo -->
-    <style>
-    .scroll-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: #71909C;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        font-size: 24px;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .scroll-to-top:hover {
-        background: #485e67;
-    }
-    </style>
-
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const scrollToTopButton = document.getElementById("scrollToTop");
