@@ -11,7 +11,6 @@ if ($result = mysqli_query($conn, $query)) {
     $project_count = 0;
     echo "Error: " . mysqli_error($conn);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +24,43 @@ if ($result = mysqli_query($conn, $query)) {
     <link rel="icon" type="image/png" href="./images/logo/logoRC.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
         rel="stylesheet">
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("orderForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            fetch("order-form.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json()) // Converte para JSON
+                .then(data => {
+                    let popup = document.getElementById("popup");
+                    popup.innerHTML = `<p>${data.message}</p>`;
+                    popup.style.display = "block";
+                    popup.style.opacity = "1";
+
+                    if (data.status === "success") {
+                        setTimeout(() => {
+                            popup.style.opacity = "0";
+                            setTimeout(() => popup.style.display = "none", 500);
+                        }, 3000);
+                        document.getElementById("orderForm").reset();
+                    }
+                })
+                .catch(error => alert("Erro ao enviar: " + error));
+        });
+    });
+    </script>
 </head>
 
 <body>
+
+    <div id="popup" class="popup" style="display: none;"></div>
+
     <header class="hero">
         <nav class="navbar">
             <div class="logo">
@@ -100,26 +133,15 @@ if ($result = mysqli_query($conn, $query)) {
             <div class="project-item">
                 <img src="./images/pinterest/ballon.jpg" alt="Project 3">
             </div>
-            <div class="project-item">
-                <img src="./images/pinterest/chair.jpg" alt="Project 4">
-            </div>
-            <div class="project-item">
-                <img src="./images/pinterest/chinese.jpg" alt="Project 5">
-            </div>
-            <div class="project-item">
-                <img src="./images/pinterest/dog.jpg" alt="Project 6">
-            </div>
         </div>
-        <div class="projects-gradient"></div>
         <div class="projects-button-container">
             <a href="myProjects.php" class="projects-button">See All Projects</a>
         </div>
     </section>
 
-
     <section class="order-form" id="order-form">
         <h2>Make a Request</h2>
-        <form action="order-form.php" method="POST" enctype="multipart/form-data">
+        <form id="orderForm" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required placeholder="Enter your name">
@@ -143,25 +165,8 @@ if ($result = mysqli_query($conn, $query)) {
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 Rita Cardoso. All Rights Reserved.</p>
-            <nav class="footer-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#order-form">Services</a>
-            </nav>
-            <div class="footer-social-links">
-                <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
-                    <img src="./images/sociais/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/in/rita-cardoso-95566118b/" target="_blank" aria-label="LinkedIn">
-                    <img src="./images/sociais/linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://pt.pinterest.com/ritadesousacardoso/" target="_blank" aria-label="Pinterest">
-                    <img src="./images/sociais/pinterest.png" alt="Pinterest">
-                </a>
-            </div> 
         </div>
     </footer>
-
 
 </body>
 

@@ -1,5 +1,5 @@
 <?php
-// Habilitar mensagens de erro para depuração
+// Habilita exibição de erros para depuração
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -9,100 +9,108 @@ require './vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Database connection
+// Configurações do banco de dados
 $host = 'localhost';
 $dbUsername = 'root';
 $dbPassword = 'root123';
 $dbName = 'rita';
 
-// Create connection
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
-
-// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(["status" => "error", "message" => "Erro na conexão: " . $conn->connect_error]));
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars($_POST['name']);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $message = htmlspecialchars($_POST['message']);
-    $uploadsDir = 'uploads/';
-    $uploadedFiles = [];
+// Verifica se a requisição é POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode(["status" => "error", "message" => "Método inválido."]);
+    exit();
+}
 
-    // Verificar se o email é válido
-    if (!$email) {
-        die('Por favor, forneça um email válido.');
-    }
+// Validação dos campos
+$name = htmlspecialchars($_POST['name'] ?? '');
+$email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
+$message = htmlspecialchars($_POST['message'] ?? '');
 
-    // Criar pasta de uploads se não existir
-    if (!is_dir($uploadsDir)) {
-        mkdir($uploadsDir, 0777, true);
-    }
+if (!$name || !$email || !$message) {
+    echo json_encode(["status" => "error", "message" => "Todos os campos são obrigatórios."]);
+    exit();
+}
 
-    // Processar uploads de arquivos
-    if (!empty($_FILES['images']['name'][0])) {
-        foreach ($_FILES['images']['tmp_name'] as $index => $tmpName) {
-            $fileName = basename($_FILES['images']['name'][$index]);
-            $targetFilePath = $uploadsDir . $fileName;
+// Diretório de uploads
+$uploadsDir = 'uploads/';
+if (!is_dir($uploadsDir)) {
+    mkdir($uploadsDir, 0777, true);
+}
 
-            // Mover o arquivo para a pasta de uploads
-            if (move_uploaded_file($tmpName, $targetFilePath)) {
-                $uploadedFiles[] = $targetFilePath;
-            } else {
-                echo "Falha ao fazer upload do arquivo: $fileName<br>";
-            }
-        }
-    }
+$uploadedFiles = [];
+$allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+$maxFileSize = 5 * 1024 * 1024; // 5MB
 
-    // Enviar email com o PHPMailer
-    $mail = new PHPMailer(true);
+// Processamento dos arquivos
+if (!empty($_FILES['images']['name'][0])) {
+    foreach ($_FILES['images']['tmp_name'] as $index => $tmpName) {
+        $fileName = basename($_FILES['images']['name'][$index]);
+        $fileType = $_FILES['images']['type'][$index];
+        $fileSize = $_FILES['images']['size'][$index];
+        $targetFilePath = $uploadsDir . $fileName;
 
-    try {
-        // Configurações do servidor de email
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // Servidor SMTP
-        $mail->SMTPAuth = true;
-        $mail->Username = 'artyy.gus@gmail.com'; // Seu email
-        $mail->Password = 'dusx yxho vywa ekos'; // Sua senha do email
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 465;
-
-        // Configurações do remetente e destinatário
-        $mail->setFrom($email, $name);
-        $mail->addAddress('artyy.gus@gmail.com'); // Seu email de recebimento
-
-        // Adicionar arquivos anexados
-        foreach ($uploadedFiles as $file) {
-            $mail->addAttachment($file);
+        if (!in_array($fileType, $allowedTypes)) {
+            echo json_encode(["status" => "error", "message" => "Formato de arquivo inválido: " . $fileName]);
+            exit();
         }
 
-        // Configuração do conteúdo do email
-        $mail->isHTML(false);
-        $mail->Subject = 'New Request from ' . $name;
-        $mail->Body = "Name: $name\nEmail: $email\nMessage: $message";
+        if ($fileSize > $maxFileSize) {
+            echo json_encode(["status" => "error", "message" => "Arquivo muito grande: " . $fileName]);
+            exit();
+        }
 
-        // Enviar o email
-        if ($mail->send()) {
-            echo "Pedido enviado com sucesso!";
+        if (move_uploaded_file($tmpName, $targetFilePath)) {
+            $uploadedFiles[] = $targetFilePath;
         } else {
-            echo "Falha ao enviar o pedido.";
+            echo json_encode(["status" => "error", "message" => "Erro ao enviar: " . $fileName]);
+            exit();
         }
+    }
+}
 
-        // Save request to the database
-        $images = implode(',', $uploadedFiles); // Convert array to comma-separated string
+// Configuração do PHPMailer
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'artyy.gus@gmail.com';
+    $mail->Password = 'dusx yxho vywa ekos';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
+    $mail->setFrom($email, $name);
+    $mail->addAddress('artyy.gus@gmail.com');
+
+    foreach ($uploadedFiles as $file) {
+        $mail->addAttachment($file);
+    }
+
+    $mail->isHTML(false);
+    $mail->Subject = 'Novo Pedido de ' . $name;
+    $mail->Body = "Nome: $name\nEmail: $email\nMensagem: $message";
+
+    if ($mail->send()) {
+        // Insere no banco de dados
+        $images = implode(',', $uploadedFiles);
         $stmt = $conn->prepare("INSERT INTO requests (name, email, message, images) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $name, $email, $message, $images);
         $stmt->execute();
         $stmt->close();
 
-    } catch (Exception $e) {
-        echo "Erro ao enviar o pedido: {$mail->ErrorInfo}";
+        echo json_encode(["status" => "success", "message" => "Pedido enviado com sucesso!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Falha no envio do email."]);
     }
-} else {
-    echo "Método de requisição inválido.";
+} catch (Exception $e) {
+    echo json_encode(["status" => "error", "message" => "Erro no email: " . $mail->ErrorInfo]);
 }
 
-// Close the database connection
+// Fecha a conexão
 $conn->close();
 ?>
