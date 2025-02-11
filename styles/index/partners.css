@@ -39,11 +39,11 @@
 /* Responsividade para Partners */
 @media (max-width: 768px) {
     .image-container img {
-        width: 60px;
+        width: 80px;
     }
 
     .image-container img:hover {
-        width: 100px;
+        width: 120px;
     }
 
     .image-container img:nth-child(n+5) {
@@ -53,10 +53,10 @@
 
 @media (max-width: 480px) {
     .image-container img {
-        width: 50px;
+        width: 70px;
     }
 
     .image-container img:hover {
-        width: 80px;
+        width: 100px;
     }
 }

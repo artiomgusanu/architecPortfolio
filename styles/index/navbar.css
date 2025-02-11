@@ -1,0 +1,120 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Logo Container */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+}
+
+.logo-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Logo Base */
+.logo-base {
+    opacity: 0.8;
+}
+
+/* Logo Top */
+.logo-top {
+    filter: invert(100%);
+}
+
+@media (max-width: 768px) {
+    .logo-container{
+        width: 200px;
+        height: 200px;
+    }
+    .logo-base {
+        filter: invert(100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container{
+        width: 200px;
+        height: 200px;
+    }
+    .logo-base {
+        filter: invert(100%);
+    }
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    position: absolute; /* Permite centralizar no meio do navbar */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    background: rgba(225, 223, 223, 0.7);
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #333; /* Cor do texto ao passar o mouse */
+    transform: translateY(-2px); /* Movimento para cima */
+}
+
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a img {
+    width: 28px;
+    height: 28px;
+    filter: invert(100%) opacity(0.8);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-links a img:hover {
+    transform: scale(1.1);
+    filter: invert(100%);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Centraliza os itens no navbar */
+    }
+
+    .logo {
+        text-align: center; /* Centraliza o texto do logo */
+        font-size: 1.8rem; /* Ajuste opcional para um tamanho maior */
+    }
+
+    .nav-links,
+    .social-links {
+        display: none; /* Esconde links e ícones de redes sociais na versão móvel */
+    }
+}
