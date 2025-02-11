@@ -1,4 +1,6 @@
 @import url('../imports/reset.css');
 @import url('../imports/base.css');
 @import url('../index/scroll&popup.css');
-/* @import url('../imports/navbar.css');
+@import url('../imports/navbar.css');
+@import url('./head.css');
+@import url('../imports/footer.css');

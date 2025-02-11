@@ -1,0 +1,78 @@
+.head {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3)), 
+                      url("../../images/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 50px;
+    color: white;
+}
+
+/* Novo container para alinhar apenas o conteúdo */
+.head-wrapper {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 50px; /* Espaçamento entre os itens */
+    height: 80vh; /* Para centralizar dentro do espaço */
+}
+
+/* Deixa o conteúdo mais compacto */
+.head-content {
+    max-width: 40%;
+    text-align: left;
+}
+
+/* Título */
+.head-content h1 {
+    font-size: 2.5rem;
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.head-gallery {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd; /* Fundo temporário para testar */
+}
+
+/* Ajusta o container das imagens */
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Define o estilo das imagens */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+/* Garante que a primeira imagem apareça */
+.slides img:first-child {
+    opacity: 1;
+    z-index: 2;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Cardoso</title>
-    <link rel="stylesheet" href="./styles/index/import.css">
+    <link rel="stylesheet" href="./styles/myProjects/import.css">
     <link rel="icon" type="image/png" href="./images/logo/logoRC.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
         rel="stylesheet">
@@ -39,7 +39,7 @@
 
     <div id="popup" class="popup" style="display: none;"></div>
 
-    <header class="hero">
+    <header class="head">
         <nav class="navbar">
             <div class="logo">
                 <div class="logo-container">
@@ -64,10 +64,23 @@
                 </a>
             </div>
         </nav>
-        <div class="hero-content">
-            <h1>We design <br> the future</h1>
-            <p>I turn ideas into reality. I combine innovative design with functionality to create
-                spaces and projects that tell unique stories.</p>
+        <div class="head-wrapper">
+            <div class="head-content">
+                <h1>Find Inspiration in My Projects</h1>
+                <p>Explore a collection of my drawings, designs, and creative works.</p>
+                <a href="#projects" class="btn">Explore now</a>
+            </div>
+            <div class="head-gallery">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="./images/partners/partner6.jpg" alt="Kreativ House">
+                        <img src="./images/partners/partner7.jpg" alt="V Design">
+                        <img src="./images/partners/partner2.jpg" alt="Interior">
+                        <img src="./images/partners/partner4.jpg" alt="Kitchen">
+                        <img src="./images/partners/partner5.jpg" alt="Heintz">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -94,6 +107,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let index = 0;
+        const images = document.querySelectorAll(".slides img"); // Seleciona todas as imagens dentro da .slides
+
+        if (images.length === 0) {
+            console.log("Nenhuma imagem encontrada na galeria.");
+            return; // Se não houver imagens, o código não vai continuar
+        }
+
+        // Função para exibir a próxima imagem
+        function showNextImage() {
+            images.forEach((img, i) => {
+                img.style.opacity = i === index ? "1" :
+                "0"; // Mostra a imagem correta e esconde as outras
+            });
+
+            index = (index + 1) % images.length; // Avança o índice, voltando ao início após a última imagem
+        }
+
+        // Exibe a primeira imagem logo ao carregar a página
+        showNextImage();
+
+        // Configura o intervalo para trocar a imagem a cada 5 segundos
+        setInterval(showNextImage, 5000);
+    });
+    </script>
 
 </body>
 
