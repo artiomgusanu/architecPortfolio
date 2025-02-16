@@ -163,7 +163,7 @@ if ($result = mysqli_query($conn, $query)) {
             </div>
         </div>
         <div class="projects-button-container">
-            <a href="myProjects.php" class="projects-button">See All Projects</a>
+            <a href="./myProjects.php" class="projects-button">See All Projects</a>
         </div>
     </section>
 

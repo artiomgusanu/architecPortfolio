@@ -14,7 +14,7 @@
     align-items: center; /* Alinha os itens verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
     gap: 50px; /* Espaçamento entre os itens */
-    height: 80vh; /* Para centralizar dentro do espaço */
+    height: 70vh; /* Para centralizar dentro do espaço */
 }
 
 /* Deixa o conteúdo mais compacto */
@@ -32,47 +32,44 @@
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: black;
+    background-color: #333;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 15px;
+    padding: 10px 40px;
+    margin-top: 40px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
 }
 
 .head-gallery {
-    width: 350px;
-    height: 350px;
+    width: 400px; /* Aumentado para notar mais */
+    height: 400px; /* Aumentado para notar mais */
     overflow: hidden;
     position: relative;
     border-radius: 0 0 0 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ddd; /* Fundo temporário para testar */
+    background-color: rgba(225, 225, 225, 0.7); /* Fundo branco com opacidade aumentada */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* Ajusta o container das imagens */
-.slides {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-/* Define o estilo das imagens */
 .slides img {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
+    border-radius: 0 0 0 30px;
     transition: opacity 1s ease-in-out;
-    z-index: 1;
-}
-
-/* Garante que a primeira imagem apareça */
-.slides img:first-child {
-    opacity: 1;
-    z-index: 2;
+    filter: brightness(0.7); /* Escurece as imagens */
+    margin: 10px;
 }

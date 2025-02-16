@@ -30,6 +30,26 @@
         });
     });
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let index = 0;
+        const images = document.querySelectorAll(".slides img");
+
+        if (images.length === 0) return;
+
+        function showNextImage() {
+            images.forEach((img, i) => {
+                img.style.opacity = i === index ? "1" : "0";
+                img.style.zIndex = i === index ? "2" : "1";
+            });
+            index = (index + 1) % images.length;
+        }
+
+        showNextImage();
+        setInterval(showNextImage, 5000);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -48,9 +68,9 @@
                 </div>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="./index.php#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#order-form">Services</a></li>
+                <li><a href="./index.php#order-form">Services</a></li>
             </ul>
             <div class="social-links">
                 <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
@@ -90,9 +110,9 @@
         <div class="footer-content">
             <p>&copy; 2025 Rita Cardoso. All Rights Reserved.</p>
             <nav class="footer-links">
-                <a href="#about">About</a>
+                <a href="./index.php#about">About</a>
                 <a href="#projects">Projects</a>
-                <a href="#order-form">Services</a>
+                <a href="./index.php#order-form">Services</a>
             </nav>
             <div class="footer-social-links">
                 <a href="https://www.instagram.com/rita.sousa.cardoso/" target="_blank" aria-label="Instagram">
@@ -107,35 +127,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let index = 0;
-        const images = document.querySelectorAll(".slides img"); // Seleciona todas as imagens dentro da .slides
-
-        if (images.length === 0) {
-            console.log("Nenhuma imagem encontrada na galeria.");
-            return; // Se não houver imagens, o código não vai continuar
-        }
-
-        // Função para exibir a próxima imagem
-        function showNextImage() {
-            images.forEach((img, i) => {
-                img.style.opacity = i === index ? "1" :
-                "0"; // Mostra a imagem correta e esconde as outras
-            });
-
-            index = (index + 1) % images.length; // Avança o índice, voltando ao início após a última imagem
-        }
-
-        // Exibe a primeira imagem logo ao carregar a página
-        showNextImage();
-
-        // Configura o intervalo para trocar a imagem a cada 5 segundos
-        setInterval(showNextImage, 5000);
-    });
-    </script>
-
 </body>
 
 </html>
