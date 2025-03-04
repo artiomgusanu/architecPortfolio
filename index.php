@@ -1,22 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-include './db/connection.php';
-
-// Query to get the project count
-$query = "SELECT COUNT(*) as project_count FROM projects";
-
-if ($result = mysqli_query($conn, $query)) {
-    $row = mysqli_fetch_assoc($result);
-    $project_count = $row['project_count'];
-} else {
-    $project_count = 0;
-    echo "Error: " . mysqli_error($conn);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,10 +131,25 @@ if ($result = mysqli_query($conn, $query)) {
     </section>
 
     <section class="projects-section" id="projects">
-        <h2>My Projects (<?php echo $project_count; ?> Completed)</h2>
+        <h2>My Projects</h2>
         <div class="projects">
             <div class="project-item">
                 <img src="./images/pinterest/boat.jpg" alt="Project 1">
+            </div>
+            <div class="project-item">
+                <img src="./images/pinterest/bee.jpg" alt="Project 2">
+            </div>
+            <div class="project-item">
+                <img src="./images/pinterest/ballon.jpg" alt="Project 3">
+            </div>
+            <div class="project-item">
+                <img src="./images/pinterest/boat.jpg" alt="Project 1">
+            </div>
+            <div class="project-item">
+                <img src="./images/pinterest/bee.jpg" alt="Project 2">
+            </div>
+            <div class="project-item">
+                <img src="./images/pinterest/ballon.jpg" alt="Project 3">
             </div>
             <div class="project-item">
                 <img src="./images/pinterest/bee.jpg" alt="Project 2">

@@ -104,6 +104,41 @@
         </div>
     </header>
 
+    <div class="mini-box"></div>
+
+    <section id="projects" class="projects-container">
+        <div class="projects-box">
+            <h2>My Projects</h2>
+            <p>Explore some of my architectural works.</p>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="./images/partners/partner1.jpeg" alt="Project 1">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner2.jpg" alt="Project 2">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner1.jpeg" alt="Project 1">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner3.jpg" alt="Project 3">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner2.jpg" alt="Project 2">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner4.jpg" alt="Project 4">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner3.jpg" alt="Project 3">
+                </div>
+                <div class="project-item">
+                    <img src="./images/partners/partner2.jpg" alt="Project 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <footer class="footer">

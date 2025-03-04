@@ -1,75 +1,101 @@
-.head {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3)), 
-                      url("../../images/background.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 30px 50px;
-    color: white;
-}
+    .head {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3)), 
+                        url("../../images/background.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 30px 50px;
+        color: white;
+    }
 
-/* Novo container para alinhar apenas o conteúdo */
-.head-wrapper {
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 50px; /* Espaçamento entre os itens */
-    height: 70vh; /* Para centralizar dentro do espaço */
-}
+    /* Novo container para alinhar apenas o conteúdo */
+    .head-wrapper {
+        display: flex;
+        align-items: center; /* Alinha os itens verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        gap: 50px; /* Espaçamento entre os itens */
+        height: 70vh; /* Para centralizar dentro do espaço */
+    }
 
-/* Deixa o conteúdo mais compacto */
-.head-content {
-    max-width: 40%;
-    text-align: left;
-}
+    /* Deixa o conteúdo mais compacto */
+    .head-content {
+        max-width: 40%;
+        text-align: left;
+    }
 
-/* Título */
-.head-content h1 {
-    font-size: 2.5rem;
-}
+    /* Título */
+    .head-content h1 {
+        font-size: 2.5rem;
+    }
 
-/* Botão */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 15px;
-    padding: 10px 40px;
-    margin-top: 40px;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-}
+    /* Botão */
+    .btn {
+        display: inline-block;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 15px;
+        padding: 10px 40px;
+        margin-top: 40px;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    }
 
-.btn:hover {
-    background-color: white;
-    color: black;
-}
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
 
-.head-gallery {
-    width: 400px; /* Aumentado para notar mais */
-    height: 400px; /* Aumentado para notar mais */
-    overflow: hidden;
-    position: relative;
-    border-radius: 0 0 0 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(225, 225, 225, 0.7); /* Fundo branco com opacidade aumentada */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-}
+    .head-gallery {
+        width: 400px; /* Aumentado para notar mais */
+        height: 400px; /* Aumentado para notar mais */
+        overflow: hidden;
+        position: relative;
+        border-radius: 0 0 0 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(225, 225, 225, 0.7); /* Fundo branco com opacidade aumentada */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    }
 
-.slides img {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    border-radius: 0 0 0 30px;
-    transition: opacity 1s ease-in-out;
-    filter: brightness(0.7); /* Escurece as imagens */
-    margin: 10px;
-}
+    .slides img {
+        width: 95%;
+        height: 95%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border-radius: 0 0 0 30px;
+        transition: opacity 1s ease-in-out;
+        filter: brightness(0.7); /* Escurece as imagens */
+        margin: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .head-wrapper {
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            text-align: center; /* Centraliza o texto */
+            gap: 20px;
+        }
+    
+        .head-content {
+            max-width: 90%;
+        }
+
+        .head-content h1 {
+            font-size: 2.0rem;
+            margin-top: -20px;
+        }
+
+        .btn{
+            margin-bottom: 30px;
+        }
+    
+        .head-gallery {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    

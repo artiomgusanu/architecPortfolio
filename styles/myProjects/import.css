@@ -3,4 +3,6 @@
 @import url('../index/scroll&popup.css');
 @import url('../imports/navbar.css');
 @import url('./head.css');
+@import url('./mini-box.css');
+@import url('./projects.css');
 @import url('../imports/footer.css');
